@@ -1,0 +1,158 @@
+.layout {
+  position: relative;
+  width: 100%;
+  .top {
+    background-color: #fff;
+    position: fixed;
+    width: 100%;
+    height: 0.48rem;
+    box-sizing: border-box;
+    z-index: 99;
+    display: flex;
+    .left {
+      flex: 1;
+      display: flex;
+      @{deep} .van-dropdown-menu {
+        flex: 1;
+        .van-dropdown-menu__bar {
+          box-shadow: none;
+        }
+      }
+    }
+    .right {
+      margin-left: 0.08rem;
+      height: 0.48rem;
+      box-sizing: border-box;
+      width: 0.3rem;
+      padding-top: 0.14rem;
+    }
+  }
+  .content {
+    position: absolute;
+    // top: 0.6rem;
+    top: 1.16rem;
+    width: 100%;
+    bottom: 0.6rem;
+    overflow: auto;
+    .empty {
+      flex: 1;
+      font-size: 0.16rem;
+      position: relative;
+      text-align: center;
+      height: 100%;
+
+      div {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+
+        p {
+          color: rgba(0, 0, 0, 0.4);
+        }
+      }
+    }
+    // 折叠面板式样
+    @{deep} .van-collapse {
+      .van-collapse-item {
+        .van-cell {
+          line-height: 0.24rem;
+
+          .van-cell__title {
+            font-size: 0.16rem;
+            font-weight: 500;
+
+            div {
+              padding: 0 0.12rem;
+              display: flex !important;
+
+              span {
+                display: block;
+              }
+
+              .span_1 {
+                overflow: hidden;
+                text-overflow: ellipsis;
+                white-space: nowrap;
+                width: 1.2rem;
+              }
+
+              .span_2 {
+                width: 0.7rem;
+                text-align: center;
+              }
+
+              .span_3 {
+                // width: 1rem;
+                flex: 1;
+                text-align: center;
+              }
+            }
+          }
+
+          @{deep} .van-cell__right-icon {
+            line-height: 0.24rem;
+          }
+        }
+        .van-collapse-item__wrapper {
+          .van-collapse-item__content {
+            padding: 0 0 0 16px;
+            background-color: #f7f7f7;
+            font-size: 0.14rem;
+            .detail {
+              .van-swipe-cell__wrapper {
+                display: flex !important;
+                width: 100% !important;
+                padding: 0 12px;
+                justify-content: space-between;
+                font-size: 0.16rem;
+
+                span:nth-child(1) {
+                  width: 1.2rem;
+                }
+
+                span:nth-child(2) {
+                  width: 0.7rem;
+                  // flex: 1;
+                  text-align: center;
+                }
+
+                span:nth-child(3) {
+                  // width: 1rem;
+                  flex: 1;
+                  padding-right: 30px;
+                  text-align: center;
+                }
+
+                .delete-button {
+                  display: block;
+                  height: 0.44rem;
+
+                  .van-button__content {
+                    display: block;
+                    // position: relative;
+                    line-height: 0.44rem;
+                  }
+                }
+              }
+              display: flex;
+              justify-content: space-between;
+              height: 0.44rem;
+              line-height: 0.44rem;
+            }
+          }
+        }
+      }
+    }
+  }
+  .bottom {
+    position: fixed;
+    height: 0.5rem;
+    padding: 0.08rem 0.12rem;
+    width: 100%;
+    bottom: 0;
+    box-sizing: border-box;
+    border-top: 1px solid rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+}
